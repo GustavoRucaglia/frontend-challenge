@@ -27,7 +27,7 @@ export function FilterContextProvider({children}: ProviderProps){
     const [search, setSearch] = useState('');
     const [pages, setPages] = useState(0);
     const [type, setType] = useState(FilterType.ALL);
-    const [priority, setPriority] = useState(Priority.NEWS);
+    const [priority, setPriority] = useState(Priority.POPULARITY);
 
     return(
         <FilterContext.Provider value={{

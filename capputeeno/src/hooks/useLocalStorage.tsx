@@ -4,13 +4,14 @@ export function useLocalStorage<T>(item: string, initialValue: T){
     const [value, setValue] = useState<T>(initialValue)
 
     useEffect(() => {
-        const storedValue = localStorage.getItem(item);
-        if (storedValue) setValue(JSON.parse(storedValue));
-    }, [item]); // A dependência agora é o 'item' em vez de 'window'
+        if (typeof window === 'undefined') return;
+        let value = localStorage.getItem(item)
+        if(value) setValue(JSON.parse(value))
+    }, [window])
 
     const updateLocalStorage = (newValue: T) => {
         setValue(newValue);
-        localStorage.setItem(item, JSON.stringify(newValue));
+        localStorage.setItem(item,JSON.stringify(newValue));
     }
 
     return {

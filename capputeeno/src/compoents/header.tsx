@@ -16,13 +16,17 @@ const sairaStencil = Saira_Stencil_One({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 13vw;
+  padding: 12px 24px;
 
   > div {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 24px;
+  }
+
+  @media(min-width: ${props => props.theme.desktopBreakpoint}){
+    padding: 20px 160px;
   }
 
 `
@@ -34,7 +38,7 @@ const Logo = styled.a`
   line-height: 150%;
   text-decoration: none;
 
-  @media(min-width: ${props => props.theme.tableBreakpoint}){
+  @media(min-width: ${props => props.theme.tabletBreakpoint}){
       font-size: 24px;
   }
 

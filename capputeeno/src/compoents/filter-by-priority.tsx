@@ -84,7 +84,7 @@ function FilterByPriority(props : FilterByPriorityProps) {
         <PriorityFilter>
             <li onClick={() => handleClick(Priority.NEWS)}>Novidades</li>
             <li onClick={() => handleClick(Priority.BIGGEST_PRICE)}>Preço: Maior -Menor</li>
-            <li onClick={() => handleClick(Priority.BIGGEST_PRICE)}>Preço: Menor - Maior</li>
+            <li onClick={() => handleClick(Priority.MINOR_PRICE)}>Preço: Menor - Maior</li>
             <li onClick={() => handleClick(Priority.POPULARITY)}>Mais vendidos</li>
         </PriorityFilter>
         }
