@@ -3,6 +3,7 @@ import { Saira } from "next/font/google";
 import "./globals.css";
 import Header from "../compoents/header";
 import { FilterContextProvider } from "../context/filter.context";
+import { DefaultProviders } from "@/compoents/default-providers";
 
 const saira = Saira({ 
   weight: ["300", "500", "600", "700"],
@@ -21,10 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={saira.className}>
-        <FilterContextProvider>
+        <DefaultProviders>
         <Header/>
         {children}
-        </FilterContextProvider>
+        </DefaultProviders>
         </body>
     </html>
   );
