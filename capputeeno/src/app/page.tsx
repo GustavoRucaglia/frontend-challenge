@@ -6,6 +6,7 @@ import Filterbar from '../compoents/filter-bar'
 import ProductsList from '@/compoents/products-list'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import styled from 'styled-components'
+import { DefaultPageLayout } from '@/compoents/default-page-layout'
 
 const PageWrapper = styled.main`
       .main {
@@ -13,21 +14,17 @@ const PageWrapper = styled.main`
         flex-direction: column;
         align-items: center;
         padding: 12px 24px;
-        background-color: var(--bg-primary);
-
-        @media (min-width: ${props => props.theme.desktopBreakpoint}) {
-          padding: 34px 160px;
-        
-      }
 
 `
 
 export default function Home() {
 
   return (
+  <DefaultPageLayout>
     <PageWrapper>
        <Filterbar/>
        <ProductsList/>
-    </PageWrapper>  
+    </PageWrapper> 
+  </DefaultPageLayout>
   )
 }
