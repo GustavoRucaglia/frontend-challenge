@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
   image: string;
   title: string;
   price: number;
+  id: string;
 }
 
 const Card = styled(motion.div)`
@@ -17,7 +19,8 @@ const Card = styled(motion.div)`
   border-radius: 0px 0px 4px 4px;
   cursor: pointer;
   width: 256px;
-
+  cursor: pointer;
+  
   img {
     width: 256px;
     height: 300px;
@@ -60,14 +63,22 @@ const Card = styled(motion.div)`
 
 export function ProductCard(props: ProductCardProps) {
     function formatValue(value: number) {
-            const formattedValue = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            const formattedValue = (value / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             return formattedValue;
     }
 
     const price = formatValue(props.price);
+
+    const router = useRouter();
+
+    function handleNavigate() {
+        router.push(`/product?id=${props.id}`)
+    }
+
   return (
     <Card
-      whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} 
+      whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} onClick={handleNavigate}
     >
       <img src={props.image} alt="Imagem do produto" />
       <div>

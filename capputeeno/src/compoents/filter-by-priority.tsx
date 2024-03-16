@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ArrowIcon } from './arow-icon'
+import { ArrowIcon } from './icons/arow-icon'
 import { useFilter } from '@/hooks/useFilter'
 import { Priority } from '@/types/priority'
 styled

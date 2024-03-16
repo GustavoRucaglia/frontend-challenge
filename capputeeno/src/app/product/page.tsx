@@ -102,13 +102,14 @@ const ProductInfo = styled.div`
 }
 `
 
-const formatPrice = (price: number) => {
-    const formattedValue = price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    return formattedValue
+const formatPrice = (value: number) => {
+    const formattedValue = (value / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    return formattedValue;
 }
 
-function Product({ searchParams }:  { searchParams:{id: string}}) {
-  const { data } = useProduct(searchParams.id);
+export default function Product({ searchParams }: { searchParams: { id: string }}) {
+    const { data } = useProduct(searchParams.id);
+
     return (
     <DefaultPageLayout>
     <Container>
@@ -137,4 +138,4 @@ function Product({ searchParams }:  { searchParams:{id: string}}) {
   )
 }
 
-export default Product
+

@@ -7,8 +7,8 @@ export interface Product {
     category?: string
 }
 
-export interface ProductFetchResponse {
+export interface ProductFetchResponse{
     data: {
-        product: Product
+        Product: Product
     }
 }
